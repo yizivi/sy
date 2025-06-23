@@ -9,6 +9,5 @@ yizivi/yizivi is a ✨ special ✨ repository because its `README.md` (this file
 You can click the Preview link to take a look at your changes.
 --->
 
-https://cndl.synology.cn/download/Utility/SynologyDriveClient/3.5.0-16084/Windows/Installer/i686/Synology%20Drive%20Client-3.5.0-16084-x86.exe
-
-https://cndl.synology.cn/download/Utility/SynologyDriveClient/3.5.0-16084/Mac/Installer/synology-drive-client-16084.dmg
+https://cndl.synology.cn/download/Utility/SynologyDriveClient/3.5.2-16111/Windows/Installer/i686/Synology%20Drive%20Client-3.5.2-16111-x86.msi
+https://cndl.synology.cn/download/Utility/SynologyDriveClient/3.5.2-16111/Mac/Installer/synology-drive-client-16111.dmg
