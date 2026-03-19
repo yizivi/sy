@@ -67,5 +67,6 @@ openclaw models fallbacks add/remove model/name
 openclaw config set agents.defaults.model.fallbacks.0 model/name
 openclaw config unset agents.defaults.models["model/name"]
 
+https://docs.openclaw.ai/zh-CN/channels/feishu
 https://www.runoob.com/ai-agent/openclaw-feishu.html
 https://nodejs.org/zh-cn/download
