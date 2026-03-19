@@ -10,7 +10,7 @@ powershell -executionpolicy bypass -command "iwr -useb https://openclaw.ai/insta
 速度慢-或报128错误
 git config --global url."https://gh-proxy.org/https://github.com/".insteadOf ssh://git@github.com/
 git config --global url."https://".insteadOf git://
-npm config set registry=https://registry.npmjs.org/
+npm config set registry=https://registry.npmmirror.com
 npm config set strict-ssl false
 npm install -g openclaw  --verbose
 
@@ -35,10 +35,10 @@ rmdir /s /q C:\Users\yizil\AppData\Local\Temp
 rmdir /s /q  C:\Users\yizil\AppData\Roaming\npm\node_modules\openclaw
 
 复原配置
-git config --global --list
 npm config delete strict-ssl
 git config --global --unset url."https://hk.gh-proxy.org/https://github.com/".insteadOf 
 git config --global --unset url."https://gh-proxy.org/https://github.com/".insteadOf 
+git config --global --list
 
 加速源
 --registry=
@@ -50,15 +50,22 @@ git安装方法
 git clone https://gh-proxy.org/https://github.com/openclaw/openclaw.git
 cd openclaw && pnpm install && pnpm run build
 npm link
-
-配置飞书权限
-https://docs.openclaw.ai/zh-CN/channels/feishu
+pnpm run openclaw onboard
 
 升级
 npm i -g openclaw@latest --no-fund --no-audit
-升级飞书
 npx -y @larksuite/openclaw-lark-tools update
 
-模型选择
+openclaw pairing list
+openclaw pairing approve <platform> <code>
+
 openclaw config --section select
+openclaw configure --section models
 openclaw models status --probe
+openclaw models set zai/glm-4.7-flash
+openclaw models fallbacks add/remove model/name
+openclaw config set agents.defaults.model.fallbacks.0 model/name
+openclaw config unset agents.defaults.models["model/name"]
+
+https://www.runoob.com/ai-agent/openclaw-feishu.html
+https://nodejs.org/zh-cn/download
