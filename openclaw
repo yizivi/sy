@@ -1,0 +1,64 @@
+linux
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+source ~/.bashrc
+
+windows
+cd C:\PROGRA~1
+powershell -executionpolicy bypass -command "& ([scriptblock]::Create((iwr -useb https://openclaw.ai/install.ps1)))"
+powershell -executionpolicy bypass -command "iwr -useb https://openclaw.ai/install.ps1 | iex"
+
+速度慢-或报128错误
+git config --global url."https://gh-proxy.org/https://github.com/".insteadOf ssh://git@github.com/
+git config --global url."https://".insteadOf git://
+npm config set registry=https://registry.npmjs.org/
+npm config set strict-ssl false
+npm install -g openclaw  --verbose
+
+GPU报错
+$env:CUDA_VISIBLE_DEVICES="-1"
+$env:NODE_LLAMA_CPP_SKIP_DOWNLOAD="1"
+
+CMD方法处理GPU报错
+set NODE_LLAMA_CPP_SKIP_DOWNLOAD=1
+set CUDA_VISIBLE_DEVICES=-1
+
+速度慢延长超时时间
+npm config edit
+fetch-timeout=120000
+fetch-retry-mintimeout=20000
+fetch-retry-maxtimeout=1200000
+
+清理缓存
+npm cache clean --force
+rmdir /s /q C:\Users\yizil\AppData\Local\npm-cache
+rmdir /s /q C:\Users\yizil\AppData\Local\Temp
+rmdir /s /q  C:\Users\yizil\AppData\Roaming\npm\node_modules\openclaw
+
+复原配置
+git config --global --list
+npm config delete strict-ssl
+git config --global --unset url."https://hk.gh-proxy.org/https://github.com/".insteadOf 
+git config --global --unset url."https://gh-proxy.org/https://github.com/".insteadOf 
+
+加速源
+--registry=
+https://registry.npmmirror.com 
+https://mirrors.cloud.tencent.com/npm/
+https://registry.npmjs.org/
+
+git安装方法
+git clone https://gh-proxy.org/https://github.com/openclaw/openclaw.git
+cd openclaw && pnpm install && pnpm run build
+npm link
+
+配置飞书权限
+https://docs.openclaw.ai/zh-CN/channels/feishu
+
+升级
+npm i -g openclaw@latest --no-fund --no-audit
+升级飞书
+npx -y @larksuite/openclaw-lark-tools update
+
+模型选择
+openclaw config --section select
+openclaw models status --probe
