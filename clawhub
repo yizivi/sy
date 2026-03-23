@@ -1,7 +1,7 @@
 clawhub install self-improving-agent
 clawhub install ontology
 clawhub install Summarize
-clawhub install find-skills
+clawhub install find-skills-skill
 clawhub install openclaw-tavily-search
 clawhub install agent-browser
 clawhub install self-improving
