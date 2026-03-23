@@ -70,3 +70,10 @@ openclaw config unset agents.defaults.models["model/name"]
 https://docs.openclaw.ai/zh-CN/channels/feishu
 https://www.runoob.com/ai-agent/openclaw-feishu.html
 https://nodejs.org/zh-cn/download
+
+git config --global user.email "email"
+git config --global user.name "Name"
+cd git/sy
+git add .
+git commit -m "update"
+git push
