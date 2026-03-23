@@ -17,7 +17,15 @@ clawhub install mcporter
 clawhub install desktop-control
 clawhub install model-usage
 
+clawhub install free-ride
+clawhub install image
+clawhub install command-center
+clawhub install chart-image
+
 clawhub install xiaohongshu-mcp
 clawhub install browser-automation
 clawhub install browser-use
 clawhub install pdf
+
+
+
