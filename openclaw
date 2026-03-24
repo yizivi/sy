@@ -53,19 +53,27 @@ npm link
 pnpm run openclaw onboard
 
 升级
-npm i -g openclaw@latest --no-fund --no-audit
-npx -y @larksuite/openclaw-lark-tools update
+npm i -g openclaw@latest --no-fund --no-audit --verbose
+npx -y @larksuite/openclaw-lark-tools update --verbose
 
 openclaw pairing list
 openclaw pairing approve <platform> <code>
 
 openclaw config --section select
 openclaw configure --section models
+
+models
 openclaw models status --probe
 openclaw models set zai/glm-4.7-flash
 openclaw models fallbacks add/remove model/name
 openclaw config set agents.defaults.model.fallbacks.0 model/name
-openclaw config unset agents.defaults.models["model/name"]
+openclaw config unset models.name
+
+search engine
+openclaw plugins disable brave
+openclaw plugins enabled tavily
+openclaw config set tools.web.search.provider tavily
+openclaw config set plugins.entries.tavily.config.webSearch.apiKey "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"
 
 https://docs.openclaw.ai/zh-CN/channels/feishu
 https://www.runoob.com/ai-agent/openclaw-feishu.html
