@@ -52,15 +52,17 @@ cd openclaw && pnpm install && pnpm run build
 npm link
 pnpm run openclaw onboard
 
-升级
-npm i -g openclaw@latest --no-fund --no-audit --verbose
-npx -y @larksuite/openclaw-lark-tools update --verbose
-
+配对
 openclaw pairing list
 openclaw pairing approve <platform> <code>
 
 openclaw config --section select
 openclaw configure --section models
+
+安装地址
+https://docs.openclaw.ai/zh-CN/channels/feishu
+https://www.runoob.com/ai-agent/openclaw-feishu.html
+https://nodejs.org/zh-cn/download
 
 模型设置
 openclaw models status --probe
@@ -80,13 +82,13 @@ openclaw plugins enabled tavily
 openclaw config set tools.web.search.provider tavily
 openclaw config set plugins.entries.tavily.config.webSearch.apiKey "apiKey"
 
-https://docs.openclaw.ai/zh-CN/channels/feishu
-https://www.runoob.com/ai-agent/openclaw-feishu.html
-https://nodejs.org/zh-cn/download
+升级
+npm i -g openclaw@latest --no-fund --no-audit --verbose
+npx -y @larksuite/openclaw-lark-tools update --verbose
 
 git config --global user.email "email"
 git config --global user.name "Name"
-cd git/sy
+cd git\sy
 git add .
 git commit -m "update"
 git push
