@@ -62,14 +62,19 @@ openclaw pairing approve <platform> <code>
 openclaw config --section select
 openclaw configure --section models
 
-models
+模型设置
 openclaw models status --probe
 openclaw models set zai/glm-4.7-flash
 openclaw models fallbacks add/remove model/name
 openclaw config set agents.defaults.model.fallbacks.0 model/name
-openclaw config unset models.name
+删除模型
+openclaw config unset agents.defaults.models.name
+openclaw config set agents.defaults.model.fallbacks [""]
+openclaw config unset models.providers.name 
 
-search engine
+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
+
+搜索引擎
 openclaw plugins disable brave
 openclaw plugins enabled tavily
 openclaw config set tools.web.search.provider tavily
