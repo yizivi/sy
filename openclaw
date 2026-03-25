@@ -73,7 +73,7 @@ search engine
 openclaw plugins disable brave
 openclaw plugins enabled tavily
 openclaw config set tools.web.search.provider tavily
-openclaw config set plugins.entries.tavily.config.webSearch.apiKey "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"
+openclaw config set plugins.entries.tavily.config.webSearch.apiKey "apiKey"
 
 https://docs.openclaw.ai/zh-CN/channels/feishu
 https://www.runoob.com/ai-agent/openclaw-feishu.html
