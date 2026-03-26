@@ -80,7 +80,7 @@ openclaw config unset models.providers.name
 
 升级
 npm i -g openclaw@latest --no-fund --no-audit --verbose
-npx -y @larksuite/openclaw-lark-tools update --verbose
+npx -y @larksuite/openclaw-lark-tools update 
 
 git config --global user.email "email"
 git config --global user.name "Name"
