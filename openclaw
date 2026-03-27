@@ -1,6 +1,37 @@
 linux
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+1、
+curl -fsSLk https://gh-proxy.org/https://github.com/Schniz/fnm/releases/download/v1.39.0/fnm-linux.zip -o fnm.zip --verbose
+apt install -y unzip
+unzip -o fnm.zip 
+sudo mv fnm /usr/local/bin/
+rm fnm.zip
+
+  fnm安装方式--更改fnm镜像源地址：linux
+echo 'export FNM_NODE_DIST_MIRROR=https://mirrors.aliyun.com/nodejs-release/' >> ~/.bashrc && source ~/.bashrc
+  apple--zsh
+echo 'export FNM_NODE_DIST_MIRROR=https://mirrors.aliyun.com/nodejs-release/' >> ~/.zshrc && source ~/.zshrc
+
+fnm install 24
+
+
+2、curl -fsSL https://gh-proxy.org/https://raw.githubusercontent.com/mklement0/n-install/stable/bin/n-install | bash -s 24
+n install 24
+
+3、nvm安装方式
+curl -o- https://gh-proxy.proxy.org/https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+\. "$HOME/.nvm/nvm.sh"
+
+echo 'export NVM_NODEJS_ORG_MIRROR=https://mirrors.aliyun.com/nodejs-release/' >> ~/.bashrc
 source ~/.bashrc
+apt install -y build-essential
+nvm install 24
+
+corepack enable pnpm
+git config --global url."https://gh-proxy.org/https://github.com/".insteadOf ssh://git@github.com/
+git config --global url."https://".insteadOf git://
+curl -fsSL https://openclaw.ai/install.sh | bash -s --verbose
+
+
 
 windows
 cd C:\PROGRA~1
