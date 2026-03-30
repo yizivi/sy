@@ -1,44 +1,53 @@
 linux
-1、
+###1、fnm安装方式
 curl -fsSLk https://gh-proxy.org/https://github.com/Schniz/fnm/releases/download/v1.39.0/fnm-linux.zip -o fnm.zip --verbose
 apt install -y unzip
 unzip -o fnm.zip 
 sudo mv fnm /usr/local/bin/
 rm fnm.zip
-
-###fnm安装方式--更改fnm镜像源地址：linux
+###fnm--更改fnm镜像源地址：linux
 echo 'export FNM_NODE_DIST_MIRROR=https://mirrors.aliyun.com/nodejs-release/' >> ~/.bashrc && source ~/.bashrc
 ###苹果MACOS--zsh
 echo 'export FNM_NODE_DIST_MIRROR=https://mirrors.aliyun.com/nodejs-release/' >> ~/.zshrc && source ~/.zshrc
 ###安装
 fnm install 24
+cp /root/.local/share/fnm/node-versions/v24.14.1/installation/bin/node /usr/local/bin
 
-2、curl -fsSL https://gh-proxy.org/https://raw.githubusercontent.com/mklement0/n-install/stable/bin/n-install | bash -s 24
+###2、n安装方式
+curl -fsSL https://gh-proxy.org/https://raw.githubusercontent.com/mklement0/n-install/stable/bin/n-install | bash -s 24
 ###linux设置n的加速地址
 echo 'export N_NODE_MIRROR=https://npmmirror.com/mirrors/node' >> ~/.bashrc
 ###苹果MACOS--zsh
 echo 'export N_NODE_MIRROR=https://npmmirror.com/mirrors/node' >> ~/.zshrc
 source ~/.bashrc  # 立即生效
-###安装
+###手动安装
+cp ~/n/bin/n /usr/local/bin
 n install 24
+cp /root/n/n/versions/node/24.14.1/bin/node /usr/local/bin/
 
-3、nvm安装方式
+###3、nvm安装方式
 curl -o- https://gh-proxy.proxy.org/https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 \. "$HOME/.nvm/nvm.sh"
-
 echo 'export NVM_NODEJS_ORG_MIRROR=https://mirrors.aliyun.com/nodejs-release/' >> ~/.bashrc
 source ~/.bashrc
-apt install -y build-essential
 nvm install 24
+cp /root/.nvm/versions/node/v24.1.0/bin/node /usr/local/bin
 nvm deactivate
 nvm uninstall v24.1.0
 
+##设置npm的github加速地址
 corepack enable pnpm
 git config --global url."https://gh-proxy.org/https://github.com/".insteadOf ssh://git@github.com/
 git config --global url."https://".insteadOf git://
 curl -fsSL https://openclaw.ai/install.sh | bash -s --verbose
 
-Windows
+###wsl安装小龙虾必装组件
+sudo apt update && sudo apt install -y \
+  build-essential chromium-browser ffmpeg poppler-utils libreoffice  xdg-utils tesseract-ocr tesseract-ocr-chi-sim  wget curl unzip zip jq \
+  libxcb1 libxcb-randr0 libxcb-image0 libxcb-keysyms1 libxcb-xfixes0 libxcb-shape0 libxcb-render0 libxcb-shm0 libxcb-sync1 libxcb-xf86dri0 libxcb-present0 libxcb-xinerama0 libxcb-cursor0 libxcb-dri3-0 libssl-dev libffi-dev libxml2-dev libxslt1-dev libatk1.0-0 libatk-bridge2.0-0 libcups2 libdrm2 libxkbcommon0 libxcomposite1 libxdamage1 libxfixes3 libxrandr2 libgbm1 libpango-1.0-0 libcairo2 libx11-xcb1 libxtst6 \
+  fonts-wqy-zenhei fonts-wqy-microhei \
+  
+Windows 安装方式
 cd C:\PROGRA~1
 powershell -executionpolicy bypass -command "& ([scriptblock]::Create((iwr -useb https://openclaw.ai/install.ps1)))"
 powershell -executionpolicy bypass -command "iwr -useb https://openclaw.ai/install.ps1 | iex"
@@ -117,9 +126,4 @@ openclaw config unset models.providers.name
 升级
 npm i -g openclaw@latest --no-fund --no-audit --verbose
 
-git config --global user.email "email"
-git config --global user.name "Name"
-cd git\sy
-git add .
-git commit -m "update"
-git push
+
