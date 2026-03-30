@@ -6,15 +6,20 @@ unzip -o fnm.zip
 sudo mv fnm /usr/local/bin/
 rm fnm.zip
 
-  fnm安装方式--更改fnm镜像源地址：linux
+###fnm安装方式--更改fnm镜像源地址：linux
 echo 'export FNM_NODE_DIST_MIRROR=https://mirrors.aliyun.com/nodejs-release/' >> ~/.bashrc && source ~/.bashrc
-  apple--zsh
+###苹果MACOS--zsh
 echo 'export FNM_NODE_DIST_MIRROR=https://mirrors.aliyun.com/nodejs-release/' >> ~/.zshrc && source ~/.zshrc
-
+###安装
 fnm install 24
 
-
 2、curl -fsSL https://gh-proxy.org/https://raw.githubusercontent.com/mklement0/n-install/stable/bin/n-install | bash -s 24
+###linux设置n的加速地址
+echo 'export N_NODE_MIRROR=https://npmmirror.com/mirrors/node' >> ~/.bashrc
+###苹果MACOS--zsh
+echo 'export N_NODE_MIRROR=https://npmmirror.com/mirrors/node' >> ~/.zshrc
+source ~/.bashrc  # 立即生效
+###安装
 n install 24
 
 3、nvm安装方式
@@ -25,15 +30,15 @@ echo 'export NVM_NODEJS_ORG_MIRROR=https://mirrors.aliyun.com/nodejs-release/' >
 source ~/.bashrc
 apt install -y build-essential
 nvm install 24
+nvm deactivate
+nvm uninstall v24.1.0
 
 corepack enable pnpm
 git config --global url."https://gh-proxy.org/https://github.com/".insteadOf ssh://git@github.com/
 git config --global url."https://".insteadOf git://
 curl -fsSL https://openclaw.ai/install.sh | bash -s --verbose
 
-
-
-windows
+Windows
 cd C:\PROGRA~1
 powershell -executionpolicy bypass -command "& ([scriptblock]::Create((iwr -useb https://openclaw.ai/install.ps1)))"
 powershell -executionpolicy bypass -command "iwr -useb https://openclaw.ai/install.ps1 | iex"
@@ -41,7 +46,7 @@ powershell -executionpolicy bypass -command "iwr -useb https://openclaw.ai/insta
 速度慢-或报128错误
 git config --global url."https://gh-proxy.org/https://github.com/".insteadOf ssh://git@github.com/
 git config --global url."https://".insteadOf git://
-npm config set registry=https://registry.npmmirror.com
+npm config set registry=https://registry.npmmirror.com --global
 npm config set strict-ssl false
 npm install -g openclaw  --verbose
 
@@ -111,7 +116,6 @@ openclaw config unset models.providers.name
 
 升级
 npm i -g openclaw@latest --no-fund --no-audit --verbose
-npx -y @larksuite/openclaw-lark-tools update 
 
 git config --global user.email "email"
 git config --global user.name "Name"
