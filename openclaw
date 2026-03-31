@@ -124,11 +124,7 @@ openclaw config set agents.defaults.model.fallbacks [""]
 openclaw config unset models.providers.name 
 openclaw config set agents.list[0].model name
 
-清除飞书残留
-openclaw config unset 'agents. list[0].tools.alsoAllow'
-
 升级
 npm i -g openclaw@latest --no-fund --no-audit --verbose
-npx -y @larksuite/openclaw-lark update
 
 
