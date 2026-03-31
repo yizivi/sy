@@ -126,7 +126,6 @@ openclaw config set agents.list[0].model name
 
 升级
 npm i -g openclaw@latest --no-fund --no-audit --verbose
-npx -y @larksuite/openclaw-lark install
 npx -y @larksuite/openclaw-lark update
 
 
