@@ -93,9 +93,9 @@ https://registry.npmjs.org/
 
 git安装方法
 git clone https://gh-proxy.org/https://github.com/openclaw/openclaw.git
-cd openclaw && pnpm install && pnpm run build && pnpm ui:build
+cd openclaw && pnpm install && pnpm build && pnpm ui:build
 npm link
-pnpm run openclaw onboard
+pnpm openclaw onboard
 
 安装地址
 https://docs.openclaw.ai/zh-CN/channels/feishu
