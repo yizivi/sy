@@ -38,7 +38,7 @@ nvm uninstall v24.1.0
 ##设置npm的github加速地址
 corepack enable pnpm
 git config --global url."https://gh-proxy.org/https://github.com/".insteadOf ssh://git@github.com/
-git config --global url."https://".insteadOf git://
+git config --global url."https://gh-proxy.org/https//".insteadOf git://
 curl -fsSL https://openclaw.ai/install.sh | bash -s --verbose
 
 ###wsl安装小龙虾必装组件
@@ -54,7 +54,7 @@ powershell -executionpolicy bypass -command "iwr -useb https://openclaw.ai/insta
 
 速度慢-或报128错误
 git config --global url."https://gh-proxy.org/https://github.com/".insteadOf ssh://git@github.com/
-git config --global url."https://".insteadOf git://
+git config --global url."https://gh-proxy.org/https://".insteadOf git://
 npm config set registry=https://registry.npmmirror.com --global
 npm config set strict-ssl false
 npm install -g openclaw  --verbose
@@ -81,8 +81,8 @@ rmdir /s /q  C:\Users\yizil\AppData\Roaming\npm\node_modules\openclaw
 
 复原配置
 npm config delete strict-ssl
-git config --global --unset url."https://hk.gh-proxy.org/https://github.com/".insteadOf 
-git config --global --unset url."https://gh-proxy.org/https://github.com/".insteadOf 
+git config --global --unset "url.https://hk.gh-proxy.org/https://github.com/.insteadOf"
+git config --global --unset "url.https://gh-proxy.org/https://github.com/.insteadOf" 
 git config --global --list
 
 加速源
