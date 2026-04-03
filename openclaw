@@ -125,6 +125,16 @@ openclaw config set agents.defaults.model.fallbacks [""]
 openclaw config unset models.providers.name 
 openclaw config set agents.list[0].model name
 
+本地网卡绑定
+openclaw config set gateway.bind lan
+openclaw config set gateway.bind loopback
+openclaw config set gateway.customBindHost 0.0.0.0
+
+安全权限关闭
+openclaw config set tools.profile full
+openclaw config set tools.exec.security full
+openclaw config set tools.exec.ask off
+
 升级
 npm i -g openclaw@latest --no-fund --no-audit --verbose
 
