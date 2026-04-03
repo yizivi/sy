@@ -138,6 +138,9 @@ openclaw config set tools.profile full
 openclaw config set tools.exec.security full
 openclaw config set tools.exec.ask off
 
+clawhub国内镜像
+npx clawhub@latest install sonoscli --registry=https://cn.clawhub-mirror.com
+
 升级
 npm i -g openclaw@latest --no-fund --no-audit --verbose
 
