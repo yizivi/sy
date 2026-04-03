@@ -125,10 +125,13 @@ openclaw config set agents.defaults.model.fallbacks [""]
 openclaw config unset models.providers.name 
 openclaw config set agents.list[0].model name
 
-本地网卡绑定
-openclaw config set gateway.bind lan
-openclaw config set gateway.bind loopback
-openclaw config set gateway.customBindHost 0.0.0.0
+迁移openclaw更改配置文件
+fgrep -rl 'C:\\Users\\yizil\\' ~/.openclaw | xargs sed -i 's|C:\\Users\\yizil\\|~/|g'
+grep -rF '\\' ~/.openclaw | xargs sed -i 's|\\|/|g'
+
+wsl2里面镜像模式充许流量互访
+Set-NetFirewallHyperVVMSetting -Name '{40E0AC32-46A5-438A-A0B2-2B479E8F2E90}' -DefaultInboundAction Allow
+New-NetFirewallHyperVRule -Name "MyWebServer" -DisplayName "My Web Server" -Direction Inbound -VMCreatorId '{40E0AC32-46A5-438A-A0B2-2B479E8F2E90}' -Protocol TCP -LocalPorts 80
 
 安全权限关闭
 openclaw config set tools.profile full
