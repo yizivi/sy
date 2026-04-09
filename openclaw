@@ -141,6 +141,10 @@ EOF
 chmod +x /root/openclaw.sh
 wsl.exe -d Ubuntu -u  root /root/openclaw.sh
 
+openclaw绑定网关
+openclaw config get gateway.bind custom
+openclaw config set gateway.bind.customBindHost IP
+
 安全权限关闭
 openclaw config set tools.profile full
 openclaw config set tools.exec.security full
