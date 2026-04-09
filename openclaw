@@ -39,7 +39,7 @@ nvm uninstall v24.1.0
 corepack enable pnpm
 git config --global url."https://gh-proxy.org/https://github.com/".insteadOf ssh://git@github.com/
 git config --global url."https://gh-proxy.org/https//".insteadOf git://
-curl -fsSL https://openclaw.ai/install.sh | bash -s --verbose
+curl -fsSL https://openclaw.ai/install.sh | bash -s
 
 ###wsl安装小龙虾必装组件
 sudo apt update && sudo apt install -y \
