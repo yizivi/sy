@@ -126,8 +126,8 @@ openclaw config unset models.providers.name
 openclaw config set agents.list[0].model name
 
 迁移openclaw更改配置文件
-fgrep -rl 'C:\\Users\\yizil\\' ~/.openclaw | xargs sed -i 's|C:\\Users\\yizil\\|~/|g'
-grep -rF '\\' ~/.openclaw | xargs sed -i 's|\\|/|g'
+fgrep -rl 'C:\\Users\\yizili\\' ~/.openclaw | xargs sed -i 's|C:\\\\Users\\\\yizili\\\\|~/|g'
+grep -rlF '\\' ~/.openclaw | xargs sed -i 's|\\\\|/|g'
 
 wsl2里面镜像模式充许流量互访
 Set-NetFirewallHyperVVMSetting -Name '{40E0AC32-46A5-438A-A0B2-2B479E8F2E90}' -DefaultInboundAction Allow
