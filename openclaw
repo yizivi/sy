@@ -55,6 +55,7 @@ powershell -executionpolicy bypass -command "iwr -useb https://openclaw.ai/insta
 速度慢-或报128错误
 git config --global url."https://gh-proxy.org/https://github.com/".insteadOf ssh://git@github.com/
 git config --global url."https://gh-proxy.org/https://".insteadOf git://
+git config --global url."https://gh-proxy.org/https://github".insteadOf https://github
 npm config set registry=https://registry.npmmirror.com --global
 npm config set strict-ssl false
 npm install -g openclaw  --verbose
@@ -142,7 +143,7 @@ chmod +x /root/openclaw.sh
 wsl.exe -d Ubuntu -u  root /root/openclaw.sh
 
 openclaw绑定网关
-openclaw config get gateway.bind custom
+openclaw config set gateway.bind custom
 openclaw config set gateway.customBindHost IP
 openclaw config set gateway.controlUi.allowedOrigins '["http://IP:18789"]'
 openclaw config set gateway.controlUi.dangerouslyDisableDeviceAuth true

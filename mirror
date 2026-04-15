@@ -1,0 +1,53 @@
+###uv设置南京大学镜像源
+echo 'export UV_PYTHON_INSTALL_MIRROR=https://mirror.nju.edu.cn/github-release/astral-sh/python-build-standalone/' >> ~/.bashrc
+echo 'export UV_INDEX_URL=https://mirrors.aliyun.com/pypi/simple/' >> ~/.bashrc
+source ~/.bashrc
+
+###hermes一键安装
+curl -fsSL https://gh-proxy.org/https://raw.githubusercontent.com/NousResearch/hermes-agent/main/scripts/install.sh | bash
+  
+###scoop
+powershell -executionpolicy bypass -command "iwr https://gh-proxy.org/raw.githubusercontent.com/ScoopInstaller/Install/master/install.ps1 | iex"
+[environment]::setEnvironmentVariable('PATH',"$env:USERPROFILE\scoop\shims;" + $env:PATH,'USER')
+
+# 替换 Scoop 源为 Gitee（国内）
+scoop config SCOOP_REPO https://gitee.com/ScoopInstaller/Scoop
+scoop bucket add main https://gitee.com/ScoopInstaller/Main
+
+# 启用 Aria2 多线程下载（加速）
+scoop install aria2
+
+# 添加常用仓库（开发工具）
+scoop bucket add extras
+scoop bucket add versions
+scoop bucket add nerd-fonts
+
+# 自定义安装路径（可选，比如 D 盘）
+scoop config root D:\scoop
+scoop config global_path D:\scoop\apps
+
+choco
+# 官方安装命令
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+choco source add -n=choco-cn -s=https://mirrors.tuna.tsinghua.edu.cn/chocolatey/
+choco source disable -n=chocolatey
+
+
+Docker Access
+https://1ms.run/
+docker.xuanyuan.me
+https://docker.aityp.com/
+
+cat > /etc/rancher/k3s/registries.yaml << EOF 
+mirrors:
+  docker.io:
+    endpoint:
+      - "https://docker.1ms.run"
+	  - "https://docker.xuanyuan.me"
+EOF
+
+Docker 
+/etc/docker/daemon.json
+{
+        "registry-mirrors": ["https://docker.1panel.live"]
+    }
