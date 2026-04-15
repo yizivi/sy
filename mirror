@@ -32,6 +32,9 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 choco source add -n=choco-cn -s=https://mirrors.tuna.tsinghua.edu.cn/chocolatey/
 choco source disable -n=chocolatey
 
+###winget
+winget source add winget https://mirrors.ustc.edu.cn/winget-source --trust-level trusted
+winget source add winget https://mirrors.tuna.tsinghua.edu.cn/winget --trust-level trusted
 
 Docker Access
 https://1ms.run/
