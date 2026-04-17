@@ -153,9 +153,8 @@ openclaw config set tools.profile full
 openclaw config set tools.exec.security full
 openclaw config set tools.exec.ask off
 
-会话
-openclaw config set agents.defaults.compaction.reserveTokensFloor 40000
-openclaw config set agents.defaults.compaction.mode default
+多agent绑定
+openclaw agents bind --agent agentname --bind feishu:botname
 
 clawhub国内镜像
 npx clawhub@latest install sonoscli --registry=https://cn.clawhub-mirror.com
