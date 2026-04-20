@@ -1,6 +1,6 @@
 linux
 ###1、fnm安装方式
-curl -fsSLk https://gh-proxy.org/https://github.com/Schniz/fnm/releases/download/v1.39.0/fnm-linux.zip -o fnm.zip --verbose
+curl -fsSLk https://gh-proxy.com/https://github.com/Schniz/fnm/releases/download/v1.39.0/fnm-linux.zip -o fnm.zip --verbose
 apt install -y unzip
 unzip -o fnm.zip 
 sudo mv fnm /usr/local/bin/
@@ -14,7 +14,7 @@ fnm install 24
 cp /root/.local/share/fnm/node-versions/v24.14.1/installation/bin/node /usr/local/bin
 
 ###2、n安装方式
-curl -fsSL https://gh-proxy.org/https://raw.githubusercontent.com/mklement0/n-install/stable/bin/n-install | bash -s 24
+curl -fsSL https://gh-proxy.com/https://raw.githubusercontent.com/mklement0/n-install/stable/bin/n-install | bash -s 24
 ###linux设置n的加速地址
 echo 'export N_NODE_MIRROR=https://npmmirror.com/mirrors/node' >> ~/.bashrc
 ###苹果MACOS--zsh
@@ -37,8 +37,8 @@ nvm uninstall v24.1.0
 
 ##设置npm的github加速地址
 corepack enable pnpm
-git config --global url."https://gh-proxy.org/https://github.com/".insteadOf ssh://git@github.com/
-git config --global url."https://gh-proxy.org/https//".insteadOf git://
+git config --global url."https://gh-proxy.com/https://github.com/".insteadOf ssh://git@github.com/
+git config --global url."https://gh-proxy.com/https//".insteadOf git://
 curl -fsSL https://openclaw.ai/install.sh | bash -s
 
 ###wsl安装小龙虾必装组件
@@ -53,9 +53,9 @@ powershell -executionpolicy bypass -command "& ([scriptblock]::Create((iwr -useb
 powershell -executionpolicy bypass -command "iwr -useb https://openclaw.ai/install.ps1 | iex"
 
 速度慢-或报128错误
-git config --global url."https://gh-proxy.org/https://github.com/".insteadOf ssh://git@github.com/
-git config --global url."https://gh-proxy.org/https://".insteadOf git://
-git config --global url."https://gh-proxy.org/https://github".insteadOf https://github
+git config --global url."https://gh-proxy.com/https://github.com/".insteadOf ssh://git@github.com/
+git config --global url."https://gh-proxy.com/https://".insteadOf git://
+git config --global url."https://gh-proxy.com/https://github".insteadOf https://github
 npm config set registry=https://registry.npmmirror.com --global
 npm config set strict-ssl false
 npm install -g openclaw  --verbose
@@ -82,8 +82,8 @@ rmdir /s /q  C:\Users\yizil\AppData\Roaming\npm\node_modules\openclaw
 
 复原配置
 npm config delete strict-ssl
-git config --global --unset "url.https://hk.gh-proxy.org/https://github.com/.insteadOf"
-git config --global --unset "url.https://gh-proxy.org/https://github.com/.insteadOf" 
+git config --global --unset "url.https://hk.gh-proxy.com/https://github.com/.insteadOf"
+git config --global --unset "url.https://gh-proxy.com/https://github.com/.insteadOf" 
 git config --global --list
 
 加速源
@@ -93,7 +93,7 @@ https://mirrors.cloud.tencent.com/npm/
 https://registry.npmjs.org/
 
 git安装方法
-git clone https://gh-proxy.org/https://github.com/openclaw/openclaw.git
+git clone https://gh-proxy.com/https://github.com/openclaw/openclaw.git
 corepack enable pnpm
 cd openclaw && pnpm install && pnpm build && pnpm ui:build
 npm link
