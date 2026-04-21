@@ -110,7 +110,7 @@ openclaw pairing approve <platform> <code>
 
 搜索引擎
 openclaw plugins disable brave
-openclaw plugins enabled tavily
+openclaw plugins enable tavily
 openclaw config set tools.web.search.provider tavily
 openclaw config set plugins.entries.tavily.config.webSearch.apiKey "apiKey"
 
