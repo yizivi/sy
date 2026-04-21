@@ -154,7 +154,9 @@ openclaw config set tools.exec.security full
 openclaw config set tools.exec.ask off
 
 多agent绑定
-openclaw agents bind --agent agentname --bind feishu:botname
+openclaw config set channels.feishu.accounts.jarvis.appId "cli_a"
+openclaw config set channels.feishu.accounts.jarvis.appSecret "2Nz" 
+openclaw agents bind --agent agentname --bind feishu:jarvis
 
 clawhub国内镜像
 npx clawhub@latest install sonoscli --registry=https://cn.clawhub-mirror.com
