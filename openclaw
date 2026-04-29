@@ -158,6 +158,11 @@ openclaw config set channels.feishu.accounts.jarvis.appId "cli_a"
 openclaw config set channels.feishu.accounts.jarvis.appSecret "2Nz" 
 openclaw agents bind --agent agentname --bind feishu:jarvis
 
+agent to agent
+openclaw config set tools.sessions.visibility all 
+openclaw config set tools.agentToAgent.allow '["main", "agent2"]' --strict-json
+openclaw config set tools.agentToagent.enabled true 
+
 clawhub国内镜像
 npx clawhub@latest install sonoscli --registry=https://cn.clawhub-mirror.com
 
