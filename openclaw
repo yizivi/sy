@@ -162,6 +162,7 @@ agent to agent
 openclaw config set tools.sessions.visibility all 
 openclaw config set tools.agentToAgent.allow '["main", "agent2"]' --strict-json
 openclaw config set tools.agentToagent.enabled true 
+openclaw config set agents.list[0].subagents.allowAgents '["agent2"]' --strict-json
 
 clawhub国内镜像
 npx clawhub@latest install sonoscli --registry=https://cn.clawhub-mirror.com
