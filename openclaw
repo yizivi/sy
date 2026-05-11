@@ -42,11 +42,13 @@ git config --global url."https://gh-proxy.com/https//".insteadOf git://
 curl -fsSL https://openclaw.ai/install.sh | bash -s
 
 ###wsl安装小龙虾必装组件
-sudo apt update && sudo apt install -y \
-  build-essential chromium-browser ffmpeg poppler-utils libreoffice  xdg-utils tesseract-ocr tesseract-ocr-chi-sim  wget curl unzip zip jq \
-  libxcb1 libxcb-randr0 libxcb-image0 libxcb-keysyms1 libxcb-xfixes0 libxcb-shape0 libxcb-render0 libxcb-shm0 libxcb-sync1 libxcb-xf86dri0 libxcb-present0 libxcb-xinerama0 libxcb-cursor0 libxcb-dri3-0 libssl-dev libffi-dev libxml2-dev libxslt1-dev libatk1.0-0 libatk-bridge2.0-0 libcups2 libdrm2 libxkbcommon0 libxcomposite1 libxdamage1 libxfixes3 libxrandr2 libgbm1 libpango-1.0-0 libcairo2 libx11-xcb1 libxtst6 \
-  fonts-wqy-zenhei fonts-wqy-microhei \
-  
+apt update && apt install -y \
+wget curl unzip zip jq \
+fonts-wqy-zenhei fonts-wqy-microhei \
+libnss3 libglib2.0-0 libfontconfig1 libgconf-2-4
+# 刷新字体缓存
+fc-cache -fv
+
 Windows 安装方式
 cd C:\PROGRA~1
 powershell -executionpolicy bypass -command "& ([scriptblock]::Create((iwr -useb https://openclaw.ai/install.ps1)))"

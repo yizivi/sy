@@ -1,13 +1,21 @@
 ###uv设置南京大学镜像源
 echo 'export UV_PYTHON_INSTALL_MIRROR=https://mirror.nju.edu.cn/github-release/astral-sh/python-build-standalone/' >> ~/.bashrc
 echo 'export UV_INDEX_URL=https://mirrors.aliyun.com/pypi/simple/' >> ~/.bashrc
+# 1. 创建虚拟环境
+uv venv
+# 2. 激活环境（关键！）
+source .venv/bin/activate
+# 3. 现在可以正常安装，不需要 --system
+uv pip install setuptools
+uv pip install psutil
+echo 'source ~/.venv/bin/activate' >> ~/.bashrc
 source ~/.bashrc
 
 ###hermes一键安装
-curl -fsSL https://gh-proxy.org/https://raw.githubusercontent.com/NousResearch/hermes-agent/main/scripts/install.sh | bash
+curl -fsSL https://gh-proxy.com/https://raw.githubusercontent.com/NousResearch/hermes-agent/main/scripts/install.sh | bash
   
 ###scoop
-powershell -executionpolicy bypass -command "iwr https://gh-proxy.org/raw.githubusercontent.com/ScoopInstaller/Install/master/install.ps1 | iex"
+powershell -executionpolicy bypass -command "iwr https://gh-proxy.com/raw.githubusercontent.com/ScoopInstaller/Install/master/install.ps1 | iex"
 [environment]::setEnvironmentVariable('PATH',"$env:USERPROFILE\scoop\shims;" + $env:PATH,'USER')
 
 # 替换 Scoop 源为 Gitee（国内）
