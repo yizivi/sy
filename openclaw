@@ -116,17 +116,17 @@ openclaw plugins enable tavily
 openclaw config set tools.web.search.provider tavily
 openclaw config set plugins.entries.tavily.config.webSearch.apiKey "apiKey"
 
-模型设置
+模型状态
 openclaw models status --probe
-openclaw models set zai/glm-4.7-flash
-openclaw models fallbacks add/remove model/name
-openclaw config set agents.defaults.model.fallbacks.0 model/name
 
-删除模型
-openclaw config unset agents.defaults.models.name
-openclaw config set agents.defaults.model.fallbacks [""]
-openclaw config unset models.providers.name 
-openclaw config set agents.list[0].model name
+模型设置
+openclaw models set zai/glm-4.7-flash  设置默认模型
+openclaw config set agents.list[0].model name 设置默认的agents使用的模型
+openclaw models fallbacks add/remove model/name 添加删除fallbacks
+openclaw config set agents.defaults.model.fallbacks '["name"]' 添加删除fallbacks方法2
+openclaw config set agents.defaults.model.fallbacks.0 model/name 设置fallback优先级
+openclaw config unset 'agents.defaults.models["zai/glm-4.7-flash"]' 删除模型
+openclaw config unset models.providers.name  删除自定义模型提供商
 
 迁移openclaw更改配置文件
 fgrep -rl 'C:\\Users\\yizili\\' ~/.openclaw | xargs sed -i 's|C:\\\\Users\\\\yizili\\\\|~/|g'
